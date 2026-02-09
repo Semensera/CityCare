@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+
+header {
+  background: #2c7be5;
+  padding: 15px;
+  color: white;
+}
+
+header a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+  padding: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  background: #2c7be5;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+#map {
+  height: 400px;
+  margin: 15px 0;
+}

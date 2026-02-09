@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Додати проблему</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html">Головна</a>
+  <a href="map.html">Карта</a>
+</header>
+
+<div class="container">
+  <h2>Нова проблема</h2>
+
+  <input id="title" placeholder="Назва проблеми">
+  <textarea id="description" placeholder="Опис проблеми"></textarea>
+
+  <select id="category">
+    <option>Дороги</option>
+    <option>Освітлення</option>
+    <option>Сміття</option>
+  </select>
+
+  <button onclick="getMyLocation()">📍 Моє місцезнаходження</button>
+
+  <div id="map"></div>
+
+  <button onclick="addProblem()">Надіслати</button>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

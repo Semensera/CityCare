@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityCare | Твоє місто стає кращим</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header>
+    <div>
+        <h1>🏙 CityCare</h1>
+        <p>Робимо місто комфортним разом</p>
+    </div>
+    <div id="authPanel" class="auth-panel">
+    </div>
+</header>
+
+<div class="main-container">
+    <div id="map"></div>
+
+    <div class="sidebar">
+        <button type="button" id="locateBtn" class="btn-locate">🎯 Знайти моє місцезнаходження</button>
+
+        <div id="guestMessage" class="instruction" style="background-color: #fef2f2; color: #991b1b;">
+            <strong>🔒 Доступ закрито</strong><br>
+            Будь ласка, увійдіть або зареєструйтесь, щоб повідомляти про проблеми.
+        </div>
+
+        <form id="problemForm" style="display: none;">
+            <div class="instruction">
+                <strong>📍 Як повідомити про проблему?</strong><br>
+                Клікніть на карті точне місце проблеми, заповніть деталі нижче та натисніть "Відправити".
+            </div>
+
+            <div class="form-group">
+                <label>Категорія:</label>
+                <select id="category" required>
+                    <option value="" disabled selected>Оберіть категорію...</option>
+                    <option value="Яма на дорозі">Яма на дорозі</option>
+                    <option value="Проблема з освітленням">Не працює освітлення</option>
+                    <option value="Сміття">Стихійне сміттєзвалище</option>
+                    <option value="Аварійний об'єкт">Аварійний об'єкт</option>
+                    <option value="Інше">Інше</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Опис ситуації:</label>
+                <textarea id="description" rows="4" placeholder="Що саме сталося?" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Фото проблеми (необов'язково):</label>
+                <input type="file" id="photoInput" accept="image/*">
+            </div>
+
+            <button type="submit" class="btn-submit">Відправити заявку</button>
+        </form>
+    </div>
+</div>
+
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModals()">&times;</span>
+        <h2>Вхід</h2>
+        <form id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Логін" required class="form-group" style="width:100%; margin-bottom:10px;">
+            <input type="password" id="loginPassword" placeholder="Пароль" required class="form-group" style="width:100%; margin-bottom:10px;">
+            <button type="submit" class="btn-submit">Увійти</button>
+        </form>
+    </div>
+</div>
+
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModals()">&times;</span>
+        <h2>Реєстрація</h2>
+        <form id="registerForm">
+            <input type="text" id="regUsername" placeholder="Придумайте логін" required class="form-group" style="width:100%; margin-bottom:10px;">
+            <input type="password" id="regPassword" placeholder="Придумайте пароль" required class="form-group" style="width:100%; margin-bottom:10px;">
+            <button type="submit" class="btn-submit" style="background-color: #10b981;">Зареєструватися</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
